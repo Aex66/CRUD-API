@@ -12,7 +12,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.deleteOrder = exports.getOrdersByUser = exports.getOrderById = exports.createOrder = void 0;
+exports.deleteOrderById = exports.getOrdersByUser = exports.getOrderById = exports.createOrder = void 0;
 const database_1 = __importDefault(require("../database"));
 /**
  * Crea un nuevo pedido
@@ -80,9 +80,9 @@ exports.getOrdersByUser = getOrdersByUser;
  * @param id - ID del pedido
  * @returns
  */
-const deleteOrder = (id) => __awaiter(void 0, void 0, void 0, function* () {
+const deleteOrderById = (id) => __awaiter(void 0, void 0, void 0, function* () {
     const query = "DELETE FROM Orders WHERE id = ?";
     const [result] = yield database_1.default.query(query, [id]);
     return result.affectedRows; //Devuelve el numero de filas afectadas
 });
-exports.deleteOrder = deleteOrder;
+exports.deleteOrderById = deleteOrderById;

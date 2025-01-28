@@ -74,7 +74,7 @@ export const getOrdersByUser = async (userId: number): Promise<any[]> => {
  * @param id - ID del pedido
  * @returns
  */
-export const deleteOrder = async (id: number): Promise<number> => {
+export const deleteOrderById = async (id: number): Promise<number> => {
     const query = "DELETE FROM Orders WHERE id = ?";
     const [result]: any = await pool.query(query, [id]);
     return result.affectedRows //Devuelve el numero de filas afectadas
