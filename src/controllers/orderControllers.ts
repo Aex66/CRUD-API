@@ -30,7 +30,7 @@ export const getOrderByIdController = async (req: Request, res: Response) => {
 };
 
 //Obtiene la lista de pedidos de un usuario
-export const getUserOrders = async (req: Request, res: Response) => {
+export const getUserOrdersController = async (req: Request, res: Response) => {
     try {
         const { id } = req.params
 
@@ -44,7 +44,7 @@ export const getUserOrders = async (req: Request, res: Response) => {
 };
 
 //Elimina un pedido
-export const deleteOrder = async (req: Request, res: Response) => {
+export const deleteOrderController = async (req: Request, res: Response) => {
     try {
         const { id } = req.params
 

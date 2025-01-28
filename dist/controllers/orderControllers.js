@@ -9,7 +9,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.deleteOrder = exports.getUserOrders = exports.getOrderByIdController = exports.createOrderController = void 0;
+exports.deleteOrderController = exports.getUserOrdersController = exports.getOrderByIdController = exports.createOrderController = void 0;
 const Order_1 = require("../models/Order");
 //Crea un nuevo pedido
 const createOrderController = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
@@ -42,7 +42,7 @@ const getOrderByIdController = (req, res) => __awaiter(void 0, void 0, void 0, f
 });
 exports.getOrderByIdController = getOrderByIdController;
 //Obtiene la lista de pedidos de un usuario
-const getUserOrders = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+const getUserOrdersController = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     try {
         const { id } = req.params;
         const orders = (0, Order_1.getOrdersByUser)(Number(id));
@@ -53,9 +53,9 @@ const getUserOrders = (req, res) => __awaiter(void 0, void 0, void 0, function* 
         res.status(500).json({ message: "Error al obtener los pedidos de este usuario" });
     }
 });
-exports.getUserOrders = getUserOrders;
+exports.getUserOrdersController = getUserOrdersController;
 //Elimina un pedido
-const deleteOrder = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+const deleteOrderController = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     try {
         const { id } = req.params;
         const rowsAffected = yield (0, Order_1.deleteOrderById)(Number(id));
@@ -70,4 +70,4 @@ const deleteOrder = (req, res) => __awaiter(void 0, void 0, void 0, function* ()
         res.status(500).json({ message: "Error al intentar borrar este pedido" });
     }
 });
-exports.deleteOrder = deleteOrder;
+exports.deleteOrderController = deleteOrderController;
