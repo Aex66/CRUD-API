@@ -1,5 +1,4 @@
 import { Request, Response } from "express";
-import { getUserById, getAllUsers } from "../models/User";
 import { createProduct, getAllProducts, getProductById } from "../models/Product";
   
 //Crea un nuevo producto
